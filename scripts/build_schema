@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+# build & verify
+prmd combine --meta docs/meta.yml docs/schemata/ | prmd verify > docs/schema.json
+
+# generate docs
+prmd doc docs/schema.json > docs/schema.md

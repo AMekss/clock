@@ -1,7 +1,15 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    committee (1.14.1)
+      json_schema (~> 0.6, >= 0.6.1)
+      rack (>= 1.5)
     diff-lcs (1.2.5)
+    erubis (2.7.0)
+    json_schema (0.13.0)
+    prmd (0.11.11)
+      erubis (~> 2.7)
+      json_schema (~> 0.3, >= 0.3.1)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -31,6 +39,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  committee (~> 1.14)
+  prmd (~> 0.11.11)
   rack-test
   rspec (~> 3.5)
   sinatra

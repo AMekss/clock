@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "type": [
+    "object"
+  ],
+  "definitions": {
+    "analog_time": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Analog time endpoint",
+      "description": "API for serving time in json format returning angles of digital clock hands",
+      "strictProperties": true,
+      "links": [
+        {
+          "description": "Endpoint returns angles of colock hands for current time",
+          "href": "/analog_time",
+          "method": "GET",
+          "rel": "self"
+        }
+      ],
+      "type": [
+        "object"
+      ],
+      "properties": {
+        "hours_angle": {
+          "description": "Hours angle in degrees",
+          "type": [
+            "number"
+          ],
+          "minimum": 0,
+          "maximum": 360,
+          "example": 66.5
+        },
+        "minutes_angle": {
+          "description": "Minutes angle in degrees",
+          "type": [
+            "number"
+          ],
+          "minimum": 0,
+          "maximum": 360,
+          "example": 14
+        },
+        "seconds_angle": {
+          "description": "Seconds angle in degrees",
+          "type": [
+            "number"
+          ],
+          "minimum": 0,
+          "maximum": 360,
+          "example": 354
+        }
+      },
+      "required": [
+        "hours_angle",
+        "minutes_angle",
+        "seconds_angle"
+      ]
+    },
+    "digital_time": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Digital time endpoint",
+      "description": "API for serving time in json format using 24 hours clock notation",
+      "strictProperties": true,
+      "links": [
+        {
+          "description": "Endpoint returns current time",
+          "href": "/digital_time",
+          "method": "GET",
+          "rel": "self"
+        }
+      ],
+      "type": [
+        "object"
+      ],
+      "properties": {
+        "hours": {
+          "description": "Hours",
+          "type": [
+            "number"
+          ],
+          "minimum": 0,
+          "maximum": 23,
+          "example": 14
+        },
+        "minutes": {
+          "description": "Minutes",
+          "type": [
+            "number"
+          ],
+          "minimum": 1,
+          "maximum": 59,
+          "example": 25
+        },
+        "seconds": {
+          "description": "Seconds",
+          "type": [
+            "number"
+          ],
+          "minimum": 1,
+          "maximum": 59,
+          "example": 49
+        }
+      },
+      "required": [
+        "hours",
+        "minutes",
+        "seconds"
+      ]
+    }
+  },
+  "properties": {
+    "analog_time": {
+      "$ref": "#/definitions/analog_time"
+    },
+    "digital_time": {
+      "$ref": "#/definitions/digital_time"
+    }
+  },
+  "title": "Clock server api",
+  "id": "api_clock",
+  "links": [
+    {
+      "href": "127.0.0.1:5000",
+      "rel": "self"
+    }
+  ]
+}

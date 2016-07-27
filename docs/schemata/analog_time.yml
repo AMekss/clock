@@ -1,0 +1,38 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: Analog time endpoint
+description: API for serving time in json format returning angles of digital clock hands
+strictProperties: true
+id: api_clock/analog_time
+
+links:
+  - description: Endpoint returns angles of colock hands for current time
+    href: "/analog_time"
+    method: GET
+    rel: self
+
+type: object
+properties:
+  hours_angle:
+    description: Hours angle in degrees
+    type: number
+    minimum: 0
+    maximum: 360
+    example: 66.5
+  minutes_angle:
+    description: Minutes angle in degrees
+    type: number
+    minimum: 0
+    maximum: 360
+    example: 14
+  seconds_angle:
+    description: Seconds angle in degrees
+    type: number
+    minimum: 0
+    maximum: 360
+    example: 354
+
+required:
+  - hours_angle
+  - minutes_angle
+  - seconds_angle

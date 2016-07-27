@@ -1,0 +1,8 @@
+"$schema": "http://json-schema.org/draft-04/hyper-schema"
+title: Clock server api
+id: api_clock
+links:
+  -
+    href: "127.0.0.1:5000"
+    rel: self
+
