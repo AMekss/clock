@@ -1,0 +1,72 @@
+.page {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.canvas_clock {
+  margin: auto;
+}
+
+.clock {
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+
+.clock__minutes-container,
+.clock__hours-container,
+.clock__seconds-container,
+.clock__minutes-container--initial,
+.clock__hours-container--initial,
+.clock__seconds-container--initial {
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0;
+}
+
+.clock__hours {
+  background: black;
+  height: 100px;
+  width: 10px;
+  position: absolute;
+  top: 120px;
+  left: 194px;
+}
+
+.clock__minutes {
+  background: black;
+  height: 120px;
+  width: 12px;
+  position: absolute;
+  top: 100px;
+  left: 194px;
+}
+
+.clock__seconds {
+  background: red;
+  height: 180px;
+  width: 6px;
+  position: absolute;
+  top: 40px;
+  left: 197px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.clock__hours-container {
+  animation: rotate 43200s infinite linear;
+}
+.clock__minutes-container {
+  animation: rotate 3600s infinite steps(60);
+}
+.clock__seconds-container {
+  animation: rotate 60s infinite steps(60);
+}
+

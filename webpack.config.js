@@ -2,7 +2,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    clock: './assets/javascripts/clock.coffee',
+    canvas_clock: './assets/javascripts/canvas_clock.coffee',
+    css_clock: './assets/javascripts/css_clock.coffee'
   },
   output: {
     path: './public/javascripts',
